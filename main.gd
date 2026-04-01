@@ -26,6 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Time.text = Time.get_time_string_from_system()
 	print(title_reel[0].name)
 	if Input.is_action_pressed("left") and not center_animation_player.is_playing():
 		#reset()
