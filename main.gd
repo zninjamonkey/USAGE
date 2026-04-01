@@ -64,21 +64,28 @@ func _update_textures() -> void:
 func _on_center_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "move_left":
 		title_reel.push_back(title_reel.pop_front())
-		$"far right tile".show()
+		#$"far right tile".show()
 		reset()
 	elif anim_name == "move_right":
 		title_reel.push_front(title_reel.pop_back())
-		$"far left tile".show()
+		#$"far left tile".show()
 		reset()
 
 func reset():
-		_update_textures()
 
 		center_animation_player.play("RESET")
+		center_animation_player.advance(0)
 		right_animation_player.play("RESET")
+		right_animation_player.advance(0)
 		left_animation_player.play("RESET")
+		left_animation_player.advance(0)
 		far_right_animation_player.play("RESET")
+		far_right_animation_player.advance(0)
 		far_left_animation_player.play("RESET")
+		far_left_animation_player.advance(0)
 		
-		#await get_tree().create_timer(1).timeout
+		#await get_tree().create_timer(0.1).timeout
+		
+		_update_textures()
+
 		
