@@ -13,22 +13,33 @@ extends Node2D
 
 #enum games {MINECRAFT, BOPL, HOGWARTS, PORTAL, WII_SPORTS}
 var minecraft = game_tile.new("Minecraft", "minecraft.png", [0])
-var bopl = game_tile.new("Bopl Battle", "bopl.png", [0])
-var hogwarts = game_tile.new("Hogwarts Legacy", "hogwarts.jpg", [0])
+var bopl = game_tile.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe")
+var hogwarts = game_tile.new("Hogwarts Legacy", "hogwarts.png", [0])
 var portal = game_tile.new("Portal", "portal.png", [0])
 var sports = game_tile.new("Wii Sports", "wiisports.png", [0])
 	
 var title_reel : Array[game_tile] = [minecraft, bopl, portal, sports, hogwarts]
+var active : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_update_textures()
+	$fader/AnimationPlayer.play("start")
+	
+	var animation_speed = 4.0
+	
+	center_animation_player.speed_scale = animation_speed
+	right_animation_player.speed_scale = animation_speed
+	left_animation_player.speed_scale = animation_speed
+	far_right_animation_player.speed_scale = animation_speed
+	far_left_animation_player.speed_scale = animation_speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Time.text = Time.get_time_string_from_system()
-	print(title_reel[0].name)
-	if Input.is_action_pressed("left") and not center_animation_player.is_playing():
+	#print(title_reel[0].name)
+	if Input.is_action_pressed("left") and active:
+		active = false
 		#reset()
 		center_animation_player.play("move_right")
 		right_animation_player.play("move_right")
@@ -36,8 +47,8 @@ func _process(delta: float) -> void:
 		far_left_animation_player.play("move_right")
 		far_right_animation_player.play("move_right")
 		
-		
-	if Input.is_action_pressed("right") and not center_animation_player.is_playing():
+	if Input.is_action_pressed("right") and active:
+		active = false
 		#reset()
 		center_animation_player.play("move_left")
 		right_animation_player.play("move_left")
@@ -45,6 +56,12 @@ func _process(delta: float) -> void:
 		far_right_animation_player.play("move_left")
 		far_left_animation_player.play("move_left")
 		
+	if Input.is_action_just_pressed("forward") and active:
+		Global.active_game = title_reel[0]
+		$fader/AnimationPlayer.play("fade_out")
+		await $fader/AnimationPlayer.animation_finished
+		get_tree().change_scene_to_file("res://launch_screen.tscn")
+
 
 
 func _update_textures() -> void:
@@ -67,10 +84,12 @@ func _on_center_animation_finished(anim_name: StringName) -> void:
 		title_reel.push_back(title_reel.pop_front())
 		#$"far right tile".show()
 		reset()
+		active = true
 	elif anim_name == "move_right":
 		title_reel.push_front(title_reel.pop_back())
 		#$"far left tile".show()
 		reset()
+		active = true
 
 func reset():
 

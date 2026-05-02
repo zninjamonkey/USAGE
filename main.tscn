@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d4dfpna7h10eb" path="res://title_images/minecraft.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bi8h1k2hw8cgj" path="res://whiteborder2.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cqg82mnd48u8y" path="res://title_images/bopl.png" id="3_lquwl"]
-[ext_resource type="Texture2D" uid="uid://y58clwg6jme1" path="res://title_images/hogwarts.jpg" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bxu0w3gkbnoxk" path="res://title_images/wiisports.png" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://ci8ilpounmkmu" path="res://title_images/portal.png" id="6_5vw27"]
 [ext_resource type="Texture2D" uid="uid://dfjyy5o6iw3bn" path="res://bg1.png" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://cgbqw0qjht3kq" path="res://fader.tscn" id="8_5vw27"]
 
 [sub_resource type="Animation" id="Animation_7dm0k"]
 length = 0.001
@@ -481,6 +481,9 @@ _data = {
 &"move_right": SubResource("Animation_lquwl")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kek77"]
+load_path = "res://.godot/imported/hogwarts.jpg-bdfc3f372da6c911067d0994ec749e6e.ctex"
+
 [sub_resource type="Animation" id="Animation_kek77"]
 length = 0.001
 tracks/0/type = "value"
@@ -639,7 +642,7 @@ libraries/ = SubResource("AnimationLibrary_7mycd")
 speed_scale = 3.0
 
 [node name="cover" type="Sprite2D" parent="left tile" unique_id=1089989356]
-texture = ExtResource("4_7mycd")
+texture = SubResource("CompressedTexture2D_kek77")
 
 [node name="far left tile" type="Node2D" parent="." unique_id=716313335]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -693,5 +696,7 @@ offset_bottom = 87.0
 pivot_offset = Vector2(65, 24)
 theme_override_font_sizes/font_size = 30
 text = "Favorites"
+
+[node name="fader" parent="." unique_id=519658876 instance=ExtResource("8_5vw27")]
 
 [connection signal="animation_finished" from="center tile/AnimationPlayer" to="." method="_on_center_animation_finished"]
