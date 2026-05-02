@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b34bm8qjofyyx"]
 
 [ext_resource type="Script" uid="uid://im4kcojk4ydw" path="res://launch_screen.gd" id="1_r8bky"]
-[ext_resource type="Texture2D" uid="uid://cqoejl3fxwscv" path="res://launch.svg" id="3_akqcw"]
+[ext_resource type="Texture2D" uid="uid://bukrpbpbuyfi4" path="res://launch 7.svg" id="3_dmyt8"]
 [ext_resource type="Texture2D" uid="uid://0suv0hgjxm5u" path="res://sidefade.png" id="4_hukj0"]
 [ext_resource type="Texture2D" uid="uid://b6wug4t5go2yk" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-0.png" id="5_a4yh5"]
 [ext_resource type="Texture2D" uid="uid://4jdw4k7fc7p6" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-1.png" id="6_h5bog"]
@@ -254,13 +254,14 @@ texture = SubResource("CompressedTexture2D_u0efc")
 
 [node name="launch" type="Sprite2D" parent="." unique_id=1889643163]
 position = Vector2(195, 540)
-scale = Vector2(0.182318, 0.182318)
-texture = ExtResource("3_akqcw")
+scale = Vector2(0.12578616, 0.12578614)
+texture = ExtResource("3_dmyt8")
 
 [node name="logo" type="Sprite2D" parent="." unique_id=1439290206]
 position = Vector2(527.74994, 528)
 
 [node name="splash" type="ColorRect" parent="." unique_id=2132087368]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
