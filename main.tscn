@@ -587,108 +587,110 @@ _data = {
 [node name="Main" type="Node2D" unique_id=646798186]
 script = ExtResource("1_1bvp3")
 
-[node name="Time" type="Label" parent="." unique_id=742541930]
+[node name="base_layer" type="Node2D" parent="." unique_id=1725666449]
+
+[node name="Time" type="Label" parent="base_layer" unique_id=742541930]
 offset_left = 1828.0
 offset_top = 5.0
 offset_right = 2015.0
 offset_bottom = 38.0
 
-[node name="center tile" type="Node2D" parent="." unique_id=124157325]
+[node name="center tile" type="Node2D" parent="base_layer" unique_id=124157325]
 position = Vector2(960, 540)
 scale = Vector2(0.8, 0.8)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="center tile" unique_id=2035825237]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base_layer/center tile" unique_id=2035825237]
 libraries/ = SubResource("AnimationLibrary_0xm2m")
 speed_scale = 3.0
 
-[node name="cover" type="Sprite2D" parent="center tile" unique_id=1952353024]
+[node name="cover" type="Sprite2D" parent="base_layer/center tile" unique_id=1952353024]
 texture = ExtResource("1_ig7tw")
 
-[node name="border" type="Sprite2D" parent="center tile" unique_id=1042355554]
+[node name="border" type="Sprite2D" parent="base_layer/center tile" unique_id=1042355554]
 modulate = Color(1, 1, 1, 0.5882353)
 scale = Vector2(1.04, 1.03)
 texture = ExtResource("3_5vw27")
 
-[node name="right tile" type="Node2D" parent="." unique_id=1464962716]
+[node name="right tile" type="Node2D" parent="base_layer" unique_id=1464962716]
 position = Vector2(1536, 540)
 scale = Vector2(0.65, 0.65)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="right tile" unique_id=443756951]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base_layer/right tile" unique_id=443756951]
 libraries/ = SubResource("AnimationLibrary_1bvp3")
 speed_scale = 3.0
 
-[node name="cover" type="Sprite2D" parent="right tile" unique_id=1649687512]
+[node name="cover" type="Sprite2D" parent="base_layer/right tile" unique_id=1649687512]
 texture = ExtResource("3_lquwl")
 
-[node name="far right tile" type="Node2D" parent="." unique_id=1374078149]
+[node name="far right tile" type="Node2D" parent="base_layer" unique_id=1374078149]
 modulate = Color(1, 1, 1, 0.4705882)
 position = Vector2(2040, 540)
 scale = Vector2(0.528, 0.528)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="far right tile" unique_id=1222493418]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base_layer/far right tile" unique_id=1222493418]
 libraries/ = SubResource("AnimationLibrary_ycdy4")
 speed_scale = 3.0
 
-[node name="cover" type="Sprite2D" parent="far right tile" unique_id=1746475355]
+[node name="cover" type="Sprite2D" parent="base_layer/far right tile" unique_id=1746475355]
 texture = ExtResource("4_272bh")
 
-[node name="left tile" type="Node2D" parent="." unique_id=1208874616]
+[node name="left tile" type="Node2D" parent="base_layer" unique_id=1208874616]
 modulate = Color(1, 1, 1, 0.7058824)
 position = Vector2(384, 540)
 scale = Vector2(0.65, 0.65)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="left tile" unique_id=568105554]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base_layer/left tile" unique_id=568105554]
 libraries/ = SubResource("AnimationLibrary_7mycd")
 speed_scale = 3.0
 
-[node name="cover" type="Sprite2D" parent="left tile" unique_id=1089989356]
+[node name="cover" type="Sprite2D" parent="base_layer/left tile" unique_id=1089989356]
 texture = SubResource("CompressedTexture2D_kek77")
 
-[node name="far left tile" type="Node2D" parent="." unique_id=716313335]
+[node name="far left tile" type="Node2D" parent="base_layer" unique_id=716313335]
 modulate = Color(1, 1, 1, 0.47058824)
 position = Vector2(-120, 540)
 scale = Vector2(0.52, 0.52)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="far left tile" unique_id=67642615]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base_layer/far left tile" unique_id=67642615]
 libraries/ = SubResource("AnimationLibrary_efxa6")
 speed_scale = 3.0
 
-[node name="cover" type="Sprite2D" parent="far left tile" unique_id=373919914]
+[node name="cover" type="Sprite2D" parent="base_layer/far left tile" unique_id=373919914]
 texture = ExtResource("6_5vw27")
 
-[node name="Bg1" type="Sprite2D" parent="." unique_id=1743002035]
+[node name="Bg1" type="Sprite2D" parent="base_layer" unique_id=1743002035]
 z_index = -1000
 position = Vector2(960, 540)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("7_272bh")
 
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=1376541257]
+[node name="ColorRect3" type="ColorRect" parent="base_layer" unique_id=1376541257]
 visible = false
 offset_top = 19.0
 offset_right = 1920.0
 offset_bottom = 89.0
 color = Color(0.103743516, 0.10374353, 0.103743516, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=304799035]
+[node name="ColorRect" type="ColorRect" parent="base_layer" unique_id=304799035]
 z_index = -1
 offset_right = 1920.0
 offset_bottom = 34.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="." unique_id=1005646049]
+[node name="ColorRect4" type="ColorRect" parent="base_layer" unique_id=1005646049]
 visible = false
 offset_top = 993.0
 offset_right = 1920.0
 offset_bottom = 1063.0
 color = Color(0.103743516, 0.10374353, 0.103743516, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=633467665]
+[node name="ColorRect2" type="ColorRect" parent="base_layer" unique_id=633467665]
 offset_top = 1021.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.14044756, 0.14044741, 0.14044744, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1384964306]
+[node name="Label" type="Label" parent="base_layer" unique_id=1384964306]
 offset_left = 895.0
 offset_top = 45.0
 offset_right = 1028.0
@@ -698,5 +700,6 @@ theme_override_font_sizes/font_size = 30
 text = "Favorites"
 
 [node name="fader" parent="." unique_id=519658876 instance=ExtResource("8_5vw27")]
+z_index = 100
 
-[connection signal="animation_finished" from="center tile/AnimationPlayer" to="." method="_on_center_animation_finished"]
+[connection signal="animation_finished" from="base_layer/center tile/AnimationPlayer" to="." method="_on_center_animation_finished"]

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b34bm8qjofyyx"]
 
 [ext_resource type="Script" uid="uid://im4kcojk4ydw" path="res://launch_screen.gd" id="1_r8bky"]
-[ext_resource type="PackedScene" uid="uid://cgbqw0qjht3kq" path="res://fader.tscn" id="2_r8bky"]
 [ext_resource type="Texture2D" uid="uid://cqoejl3fxwscv" path="res://launch.svg" id="3_akqcw"]
 [ext_resource type="Texture2D" uid="uid://0suv0hgjxm5u" path="res://sidefade.png" id="4_hukj0"]
 [ext_resource type="Texture2D" uid="uid://b6wug4t5go2yk" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-0.png" id="5_a4yh5"]
@@ -241,6 +240,7 @@ animations = [{
 }]
 
 [node name="LaunchScreen" type="Node2D" unique_id=899828308]
+z_index = 10
 script = ExtResource("1_r8bky")
 
 [node name="Sidefade" type="Sprite2D" parent="." unique_id=303424790]
@@ -252,10 +252,6 @@ z_index = -1
 position = Vector2(800, 540)
 texture = SubResource("CompressedTexture2D_u0efc")
 
-[node name="fader" parent="." unique_id=519658876 instance=ExtResource("2_r8bky")]
-visible = false
-z_index = 1
-
 [node name="launch" type="Sprite2D" parent="." unique_id=1889643163]
 position = Vector2(195, 540)
 scale = Vector2(0.182318, 0.182318)
@@ -264,7 +260,12 @@ texture = ExtResource("3_akqcw")
 [node name="logo" type="Sprite2D" parent="." unique_id=1439290206]
 position = Vector2(527.74994, 528)
 
-[node name="anim" type="AnimatedSprite2D" parent="." unique_id=864528351]
+[node name="splash" type="ColorRect" parent="." unique_id=2132087368]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="anim" type="AnimatedSprite2D" parent="splash" unique_id=864528351]
 z_index = 2
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_0qpgf")

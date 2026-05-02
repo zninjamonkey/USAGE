@@ -1,29 +1,38 @@
 extends Node2D
 
-@onready var center_animation_player: AnimationPlayer = $"center tile/AnimationPlayer"
-@onready var right_animation_player: AnimationPlayer = $"right tile/AnimationPlayer"
-@onready var left_animation_player: AnimationPlayer = $"left tile/AnimationPlayer"
-@onready var far_right_animation_player: AnimationPlayer = $"far right tile/AnimationPlayer"
-@onready var far_left_animation_player: AnimationPlayer = $"far left tile/AnimationPlayer"
+@onready var center_animation_player: AnimationPlayer = $"base_layer/center tile/AnimationPlayer"
+@onready var right_animation_player: AnimationPlayer = $"base_layer/right tile/AnimationPlayer"
+@onready var left_animation_player: AnimationPlayer = $"base_layer/left tile/AnimationPlayer"
+@onready var far_right_animation_player: AnimationPlayer = $"base_layer/far right tile/AnimationPlayer"
+@onready var far_left_animation_player: AnimationPlayer = $"base_layer/far left tile/AnimationPlayer"
 
 
-@onready var center_tile: Node2D = $"center tile"
-@onready var right_tile: Node2D = $"right tile"
-@onready var left_tile: Node2D = $"left tile"
+@onready var center_tile: Node2D = $"base_layer/center tile"
+@onready var right_tile: Node2D = $"base_layer/right tile"
+@onready var left_tile: Node2D = $"base_layer/left tile"
+
+var launch_screen_layer = preload("res://launch_screen.tscn")
+var launch_screen : Node2D
 
 #enum games {MINECRAFT, BOPL, HOGWARTS, PORTAL, WII_SPORTS}
 var minecraft = game_tile.new("Minecraft", "minecraft.png", [0])
 var bopl = game_tile.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe")
 var hogwarts = game_tile.new("Hogwarts Legacy", "hogwarts.png", [0])
-var portal = game_tile.new("Portal", "portal.png", [0])
+var portal = game_tile.new("Portal", "portal.png", [0], "D:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2.exe")
 var sports = game_tile.new("Wii Sports", "wiisports.png", [0])
 	
 var title_reel : Array[game_tile] = [minecraft, bopl, portal, sports, hogwarts]
 var active : bool = true
 
+enum layer {BASE, LAUNCH}
+var active_layer : layer = layer.BASE
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_update_textures()
+	
+	Global.fader_animation = $fader/AnimationPlayer
+	$fader.show()
 	$fader/AnimationPlayer.play("start")
 	
 	var animation_speed = 4.0
@@ -36,31 +45,47 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Time.text = Time.get_time_string_from_system()
+	$base_layer/Time.text = Time.get_time_string_from_system()
 	#print(title_reel[0].name)
-	if Input.is_action_pressed("left") and active:
-		active = false
-		#reset()
-		center_animation_player.play("move_right")
-		right_animation_player.play("move_right")
-		left_animation_player.play("move_right")
-		far_left_animation_player.play("move_right")
-		far_right_animation_player.play("move_right")
+	if active_layer == layer.BASE:
+		if Input.is_action_pressed("left") and active:
+			active = false
+			#reset()
+			center_animation_player.play("move_right")
+			right_animation_player.play("move_right")
+			left_animation_player.play("move_right")
+			far_left_animation_player.play("move_right")
+			far_right_animation_player.play("move_right")
+			
+		if Input.is_action_pressed("right") and active:
+			active = false
+			#reset()
+			center_animation_player.play("move_left")
+			right_animation_player.play("move_left")
+			left_animation_player.play("move_left")
+			far_right_animation_player.play("move_left")
+			far_left_animation_player.play("move_left")
 		
-	if Input.is_action_pressed("right") and active:
-		active = false
-		#reset()
-		center_animation_player.play("move_left")
-		right_animation_player.play("move_left")
-		left_animation_player.play("move_left")
-		far_right_animation_player.play("move_left")
-		far_left_animation_player.play("move_left")
-		
-	if Input.is_action_just_pressed("forward") and active:
-		Global.active_game = title_reel[0]
-		$fader/AnimationPlayer.play("fade_out")
-		await $fader/AnimationPlayer.animation_finished
-		get_tree().change_scene_to_file("res://launch_screen.tscn")
+		if Input.is_action_just_pressed("forward") and active:
+			Global.active_game = title_reel[0]
+			$fader/AnimationPlayer.play("fade_out")
+			await $fader/AnimationPlayer.animation_finished
+			#get_tree().change_scene_to_file("res://launch_screen.tscn")
+			launch_screen = launch_screen_layer.instantiate()
+			add_child(launch_screen)
+			$fader/AnimationPlayer.play("fade_in")
+			active_layer = layer.LAUNCH
+	
+	if Input.is_action_just_pressed("back"):
+		if launch_screen != null:
+			$fader/AnimationPlayer.play("fade_out")
+			await $fader/AnimationPlayer.animation_finished
+			launch_screen.queue_free()
+			launch_screen = null
+			active_layer = layer.BASE
+			$fader/AnimationPlayer.play("fade_in")
+
+
 
 
 
@@ -71,11 +96,11 @@ func _update_textures() -> void:
 	#$"far left tile/cover".texture = load("res://title_images/" + title_reel[-2].image_file_name)
 	#$"far right tile/cover".texture = load("res://title_images/" + title_reel[2].image_file_name)
 
-	$"center tile/cover".texture = title_reel[0].image
-	$"right tile/cover".texture = title_reel[1].image
-	$"left tile/cover".texture = title_reel[-1].image
-	$"far left tile/cover".texture = title_reel[-2].image
-	$"far right tile/cover".texture = title_reel[2].image
+	$"base_layer/center tile/cover".texture = title_reel[0].image
+	$"base_layer/right tile/cover".texture = title_reel[1].image
+	$"base_layer/left tile/cover".texture = title_reel[-1].image
+	$"base_layer/far left tile/cover".texture = title_reel[-2].image
+	$"base_layer/far right tile/cover".texture = title_reel[2].image
 	
 
 
