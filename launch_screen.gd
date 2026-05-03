@@ -1,5 +1,10 @@
 extends Node2D
 
+var pc = preload("res://platform_logos/pc.svg")
+var steam = preload("res://platform_logos/steam.svg")
+var epic = preload("res://platform_logos/epic.svg")
+var gc = preload("res://platform_logos/gc.svg")
+var wii = preload("res://platform_logos/wii.svg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,7 +12,18 @@ func _ready() -> void:
 	$bg.texture = Global.active_game.hero
 	#$fader/AnimationPlayer.play("fade_in")
 	$logo.texture = Global.active_game.logo
-	$launch.position.y += $logo.texture.get_height()/2 + 100
+	$sub_logo.position.y += $logo.texture.get_height()/2 + 50
+	$sub_logo/Label.text = Global.active_game.description
+	if Global.active_game.platform == Global.platform.PC:
+		$sub_logo/platform.texture = pc
+	elif Global.active_game.platform == Global.platform.STEAM:
+		$sub_logo/platform.texture = steam
+	elif Global.active_game.platform == Global.platform.EGS:
+		$sub_logo/platform.texture = epic
+	elif Global.active_game.platform == Global.platform.GC:
+		$sub_logo/platform.texture = gc
+	elif Global.active_game.platform == Global.platform.WII:
+		$sub_logo/platform.texture = wii
 	#$bg.scale.x = 
 	$splash.hide()
 

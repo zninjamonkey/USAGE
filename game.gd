@@ -8,13 +8,17 @@ var blurred_hero : Texture2D
 var hero : Texture2D
 var logo : Texture2D
 var launch_path : String
+var description : String
+var platform : Global.platform
 
-func _init(name : String, image_file_name : String, categories : Array, launch_path : String = "") -> void:
+func _init(name : String, image_file_name : String, categories : Array, launch_path : String = "", description : String = "", platform : Global.platform = Global.platform.PC) -> void:
 	self.name = name
 	self.image_file_name = image_file_name
 	self.categories = categories
 	self.launch_path = launch_path
 	self.image = load("res://title_images/" + image_file_name)
+	self.description = description
+	self.platform = platform
 	
 	var hero_temp = load("res://hero_images/" + image_file_name).get_image()
 	var blur_temp = Image.new()

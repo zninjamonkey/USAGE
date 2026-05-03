@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://im4kcojk4ydw" path="res://launch_screen.gd" id="1_r8bky"]
 [ext_resource type="Texture2D" uid="uid://bukrpbpbuyfi4" path="res://launch 7.svg" id="3_dmyt8"]
+[ext_resource type="Texture2D" uid="uid://3o6tvfdikfcn" path="res://esrb_images/250px-ESRB_Everyone.svg.png" id="3_h5bog"]
+[ext_resource type="Texture2D" uid="uid://brhnm2055syrn" path="res://platform_logos/pc.svg" id="4_a4yh5"]
 [ext_resource type="Texture2D" uid="uid://0suv0hgjxm5u" path="res://sidefade.png" id="4_hukj0"]
 [ext_resource type="Texture2D" uid="uid://b6wug4t5go2yk" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-0.png" id="5_a4yh5"]
 [ext_resource type="Texture2D" uid="uid://4jdw4k7fc7p6" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-1.png" id="6_h5bog"]
@@ -252,10 +254,39 @@ z_index = -1
 position = Vector2(800, 540)
 texture = SubResource("CompressedTexture2D_u0efc")
 
-[node name="launch" type="Sprite2D" parent="." unique_id=1889643163]
-position = Vector2(195, 540)
+[node name="sub_logo" type="Node2D" parent="." unique_id=283325377]
+
+[node name="esrb" type="Sprite2D" parent="sub_logo" unique_id=243742427]
+position = Vector2(916.4601, 556.46)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_h5bog")
+
+[node name="Label" type="Label" parent="sub_logo" unique_id=829372673]
+offset_left = 189.0
+offset_top = 529.0
+offset_right = 784.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.67058825)
+theme_override_font_sizes/font_size = 28
+text = "sdfsadfsd"
+autowrap_mode = 2
+
+[node name="launch" type="Sprite2D" parent="sub_logo" unique_id=1889643163]
+position = Vector2(270, 703.99994)
 scale = Vector2(0.12578616, 0.12578614)
 texture = ExtResource("3_dmyt8")
+
+[node name="platform" type="Sprite2D" parent="sub_logo" unique_id=78532063]
+modulate = Color(1, 1, 1, 0.5176471)
+position = Vector2(844.46, 556.46)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_a4yh5")
+
+[node name="Line2D" type="Line2D" parent="sub_logo" unique_id=745787589]
+visible = false
+position = Vector2(90, 518)
+points = PackedVector2Array(0, 0, 900, 0)
+width = 3.0
 
 [node name="logo" type="Sprite2D" parent="." unique_id=1439290206]
 position = Vector2(527.74994, 528)
