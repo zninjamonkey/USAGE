@@ -19,7 +19,7 @@ var minecraft = game_tile.new("Minecraft", "minecraft.png", [0], "", "Classic 3D
 var bopl = game_tile.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe", "Chaotic Party Battle Game", Global.platform.STEAM)
 var hogwarts = game_tile.new("Hogwarts Legacy", "hogwarts.png", [0], "", "Stunning Open-World RPG In The Wizarding World Of Harry Potter", Global.platform.EGS)
 var portal = game_tile.new("Portal", "portal.png", [0], "D:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2.exe", "Portal Game", Global.platform.STEAM)
-var sports = game_tile.new("Wii Sports", "wiisports.png", [0], "", "sportssss", Global.platform.WII)
+var sports = game_tile.new("Wii Sports", "wiisports.png", [0], "", "Legendary Sports Game With Motion Controls", Global.platform.WII)
 	
 var title_reel : Array[game_tile] = [minecraft, bopl, portal, sports, hogwarts]
 var active : bool = true

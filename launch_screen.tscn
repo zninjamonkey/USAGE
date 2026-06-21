@@ -63,7 +63,6 @@
 [ext_resource type="Texture2D" uid="uid://bvfdensougj1j" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-55.png" id="60_tto53"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0efc"]
-load_path = "res://.godot/imported/bopl.jpg-d87fb86af2c71bcc780e73fd7725e7a1.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0qpgf"]
 animations = [{
