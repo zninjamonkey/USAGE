@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5xudj1ask5ot"
-path="res://.godot/imported/portal.png-5b87476d77aad78faa1784e466bf4433.ctex"
+uid="uid://cnffg8vs7085p"
+path="res://.godot/imported/hogwarts.png-6084002f4841afa63d2fdeedcf463b24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://logo_images/portal.png"
-dest_files=["res://.godot/imported/portal.png-5b87476d77aad78faa1784e466bf4433.ctex"]
+source_file="res://archive_logo_images/hogwarts.png"
+dest_files=["res://.godot/imported/hogwarts.png-6084002f4841afa63d2fdeedcf463b24.ctex"]
 
 [params]
 

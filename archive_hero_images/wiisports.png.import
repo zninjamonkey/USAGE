@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdcsgu54mahcp"
-path="res://.godot/imported/hogwarts.png-008f3e9c7327770cb3bc56c3f2d955d7.ctex"
+uid="uid://c5nd78jf0uawf"
+path="res://.godot/imported/wiisports.png-8921f72277312127066f78f3cfc8948c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hero_images/hogwarts.png"
-dest_files=["res://.godot/imported/hogwarts.png-008f3e9c7327770cb3bc56c3f2d955d7.ctex"]
+source_file="res://archive_hero_images/wiisports.png"
+dest_files=["res://.godot/imported/wiisports.png-8921f72277312127066f78f3cfc8948c.ctex"]
 
 [params]
 

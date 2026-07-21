@@ -14,21 +14,45 @@ extends Node2D
 var launch_screen_layer = preload("res://launch_screen.tscn")
 var launch_screen : Node2D
 
+
 #enum games {MINECRAFT, BOPL, HOGWARTS, PORTAL, WII_SPORTS}
-var minecraft = game_tile.new("Minecraft", "minecraft.png", [0], "", "Classic 3D Sandbox Block Game", Global.platform.PC)
-var bopl = game_tile.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe", "Chaotic Party Battle Game", Global.platform.STEAM)
-var hogwarts = game_tile.new("Hogwarts Legacy", "hogwarts.png", [0], "", "Stunning Open-World RPG In The Wizarding World Of Harry Potter", Global.platform.EGS)
-var portal = game_tile.new("Portal", "portal.png", [0], "D:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2.exe", "Portal Game", Global.platform.STEAM)
-var sports = game_tile.new("Wii Sports", "wiisports.png", [0], "", "Legendary Sports Game With Motion Controls", Global.platform.WII)
+var minecraft = game_title.new("Minecraft", "minecraft.png", [0], "", "Classic 3D Sandbox Block Game", Global.platform.PC)
+var bopl = game_title.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe", "Chaotic Party Battle Game", Global.platform.STEAM)
+var hogwarts = game_title.new("Hogwarts Legacy", "hogwarts.png", [0], "", "Stunning Open-World RPG In The Wizarding World Of Harry Potter", Global.platform.EGS)
+var portal = game_title.new("Portal", "portal.png", [0], "D:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2.exe", "Portal Game", Global.platform.STEAM)
+var sports = game_title.new("Wii Sports", "wiisports.png", [0], "", "Legendary Sports Game With Motion Controls", Global.platform.WII)
 	
-var title_reel : Array[game_tile] = [minecraft, bopl, portal, sports, hogwarts]
+#var title_reel : Array[game_tile] = [minecraft, bopl, portal, sports, hogwarts]
+var title_reel : Array[game_title]
+
 var active : bool = true
 
 enum layer {BASE, LAUNCH}
 var active_layer : layer = layer.BASE
 
+func _load_config():
+	for game_config in Global.config.games:
+		var name = game_config.name
+		var file_name = game_config.file_name
+		var categories = game_config.categories
+		var launch_path = game_config.launch_path
+		var description = game_config.description
+		var platform
+		match game_config.platform:
+			"PC": platform = Global.platform.PC
+			"EGS": platform = Global.platform.EGS
+			"STEAM": platform = Global.platform.STEAM
+			"WII": platform = Global.platform.WII
+			"GC": platform = Global.platform.GC
+		var game = game_title.new(name, file_name, categories, launch_path, description, platform)
+		title_reel.append(game)
+		print(game_config)
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	_load_config()	
 	_update_textures()
 	
 	Global.fader_animation = $fader/AnimationPlayer

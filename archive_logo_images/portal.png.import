@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ibjhpovm3a3n"
-path="res://.godot/imported/bopl.png-121604bd8a0afe5c9417d5864c570eeb.ctex"
+uid="uid://c5xudj1ask5ot"
+path="res://.godot/imported/portal.png-fdc96852ac27f0f0835c65e81f99c641.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hero_images/bopl.png"
-dest_files=["res://.godot/imported/bopl.png-121604bd8a0afe5c9417d5864c570eeb.ctex"]
+source_file="res://archive_logo_images/portal.png"
+dest_files=["res://.godot/imported/portal.png-fdc96852ac27f0f0835c65e81f99c641.ctex"]
 
 [params]
 

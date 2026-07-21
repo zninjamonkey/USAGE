@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5nd78jf0uawf"
-path="res://.godot/imported/wiisports.png-b70cda284210c05caec4d4ae01b000c2.ctex"
+uid="uid://d4dfpna7h10eb"
+path.s3tc="res://.godot/imported/minecraft.png-3ab1f60e7d043361bb2d7b0aacbe04a9.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://hero_images/wiisports.png"
-dest_files=["res://.godot/imported/wiisports.png-b70cda284210c05caec4d4ae01b000c2.ctex"]
+source_file="res://archive_title_images/minecraft.png"
+dest_files=["res://.godot/imported/minecraft.png-3ab1f60e7d043361bb2d7b0aacbe04a9.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

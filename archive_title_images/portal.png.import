@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy7i0m44lyo7r"
-path="res://.godot/imported/wiisports.png-1a2ef9fca979ab4f660ae7f4bb51fecf.ctex"
+uid="uid://ci8ilpounmkmu"
+path="res://.godot/imported/portal.png-a89c5fd415f6d855da96ac6f7a791d3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://logo_images/wiisports.png"
-dest_files=["res://.godot/imported/wiisports.png-1a2ef9fca979ab4f660ae7f4bb51fecf.ctex"]
+source_file="res://archive_title_images/portal.png"
+dest_files=["res://.godot/imported/portal.png-a89c5fd415f6d855da96ac6f7a791d3f.ctex"]
 
 [params]
 

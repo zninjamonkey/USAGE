@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ecd3ybbou8o1"]
 
 [ext_resource type="Script" uid="uid://bt1wdqyrpusu7" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://d4dfpna7h10eb" path="res://archive_title_images/minecraft.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://d4dfpna7h10eb" path="res://title_images/minecraft.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bi8h1k2hw8cgj" path="res://whiteborder2.png" id="3_5vw27"]
-[ext_resource type="Texture2D" uid="uid://cqg82mnd48u8y" path="res://archive_title_images/bopl.png" id="3_lquwl"]
-[ext_resource type="Texture2D" uid="uid://bxu0w3gkbnoxk" path="res://archive_title_images/wiisports.png" id="4_272bh"]
-[ext_resource type="Texture2D" uid="uid://ci8ilpounmkmu" path="res://archive_title_images/portal.png" id="6_5vw27"]
-[ext_resource type="Texture2D" uid="uid://dg5onx3qu25rl" path="res://archive_title_images/placeholder.png" id="6_kek77"]
+[ext_resource type="Texture2D" uid="uid://cqg82mnd48u8y" path="res://title_images/bopl.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bxu0w3gkbnoxk" path="res://title_images/wiisports.png" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://ci8ilpounmkmu" path="res://title_images/portal.png" id="6_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dg5onx3qu25rl" path="res://title_images/placeholder.png" id="6_kek77"]
 [ext_resource type="Texture2D" uid="uid://dfjyy5o6iw3bn" path="res://bg1.png" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://cgbqw0qjht3kq" path="res://fader.tscn" id="8_5vw27"]
 

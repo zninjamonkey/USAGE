@@ -1,4 +1,4 @@
-class_name game_tile
+class_name game_title
 
 var name : String
 var image_file_name : String
@@ -16,11 +16,17 @@ func _init(name : String, image_file_name : String, categories : Array, launch_p
 	self.image_file_name = image_file_name
 	self.categories = categories
 	self.launch_path = launch_path
-	self.image = load("res://title_images/" + image_file_name)
+	
+	#self.image = load("res://title_images/" + image_file_name)
+	var image_path = Global.executable_dir + "/resources/title_images/" + image_file_name
+	self.image = ImageTexture.create_from_image(Image.load_from_file(image_path))
+	
 	self.description = description
 	self.platform = platform
 	
-	var hero_temp = load("res://hero_images/" + image_file_name).get_image()
+	var hero_path = Global.executable_dir + "/resources/hero_images/" + image_file_name
+	#var hero_temp = load("res://hero_images/" + image_file_name).get_image()
+	var hero_temp = Image.load_from_file(hero_path)
 	var blur_temp = Image.new()
 	blur_temp.copy_from(hero_temp)
 	var ratio = float(hero_temp.get_width()) / hero_temp.get_height()
@@ -33,7 +39,9 @@ func _init(name : String, image_file_name : String, categories : Array, launch_p
 	blur_temp.resize(ratio * 1080, 1080, Image.INTERPOLATE_LANCZOS)
 	self.blurred_hero = ImageTexture.create_from_image(blur_temp)
 	
-	var logo_temp : Image = load("res://logo_images/" + image_file_name).get_image()
+	#var logo_temp : Image = load("res://logo_images/" + image_file_name).get_image()
+	var logo_path = Global.executable_dir + "/resources/logo_images/" + image_file_name
+	var logo_temp = Image.load_from_file(logo_path)
 	var logo_ratio = float(logo_temp.get_width()) / logo_temp.get_height()
 	print(image_file_name + " " + str(logo_ratio))
 	print()
