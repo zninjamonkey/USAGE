@@ -43,8 +43,11 @@ func _init(name : String, image_file_name : String, categories : Array, launch_p
 	var logo_path = Global.executable_dir + "/resources/logo_images/" + image_file_name
 	var logo_temp = Image.load_from_file(logo_path)
 	var logo_ratio = float(logo_temp.get_width()) / logo_temp.get_height()
-	print(image_file_name + " " + str(logo_ratio))
-	print()
-	logo_temp.resize(900, 900 / logo_ratio, Image.INTERPOLATE_LANCZOS)
+	#print(image_file_name + " " + str(logo_ratio))
+	#print()
+	var scale_factor = sqrt(400000.0/(logo_temp.get_width() * logo_temp.get_height()))
+	print("stuff")
+	print(scale_factor)
+	logo_temp.resize(logo_temp.get_width() * scale_factor, logo_temp.get_height() * scale_factor, Image.INTERPOLATE_LANCZOS)
 	self.logo = ImageTexture.create_from_image(logo_temp)
 	

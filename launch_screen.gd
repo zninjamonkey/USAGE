@@ -12,8 +12,7 @@ func _ready() -> void:
 	$bg.texture = Global.active_game.hero
 	#$fader/AnimationPlayer.play("fade_in")
 	$logo.texture = Global.active_game.logo
-	$sub_logo.position.y += $logo.texture.get_height()/2 + 50
-	$sub_logo/Label.text = Global.active_game.description
+
 	if Global.active_game.platform == Global.platform.PC:
 		$sub_logo/platform.texture = pc
 	elif Global.active_game.platform == Global.platform.STEAM:
@@ -26,6 +25,14 @@ func _ready() -> void:
 		$sub_logo/platform.texture = wii
 	#$bg.scale.x = 
 	$splash.hide()
+	
+	var width = $logo.get_rect().size.x
+	var height = $logo.get_rect().size.y
+	
+	$logo.position = Vector2i(960, 150 + height/2)
+	#$sub_logo.position.y += height
+	#$sub_logo/Label.text = Global.active_game.description
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

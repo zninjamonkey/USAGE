@@ -110,9 +110,6 @@ func _process(delta: float) -> void:
 			$fader/AnimationPlayer.play("fade_in")
 
 
-
-
-
 func _update_textures() -> void:
 	#$"center tile/cover".texture = load("res://title_images/" + title_reel[0].image_file_name)
 	#$"right tile/cover".texture = load("res://title_images/" + title_reel[1].image_file_name)

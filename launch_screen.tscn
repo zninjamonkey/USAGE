@@ -244,41 +244,52 @@ animations = [{
 z_index = 10
 script = ExtResource("1_r8bky")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=400967512]
+offset_left = -114.0
+offset_top = -122.0
+offset_right = 2055.0
+offset_bottom = 1367.0
+color = Color(0, 0, 0, 0.49803922)
+
 [node name="Sidefade" type="Sprite2D" parent="." unique_id=303424790]
-position = Vector2(960, 540)
+position = Vector2(937, 877.7795)
+rotation = -1.5707964
+scale = Vector2(0.2121976, 2)
 texture = ExtResource("4_hukj0")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=495317001]
 z_index = -1
-position = Vector2(800, 540)
+position = Vector2(400, 540)
 texture = SubResource("CompressedTexture2D_u0efc")
+
+[node name="launch" type="Sprite2D" parent="." unique_id=1889643163]
+position = Vector2(1548, 902.6663)
+scale = Vector2(0.16657107, 0.166571)
+texture = ExtResource("3_dmyt8")
 
 [node name="sub_logo" type="Node2D" parent="." unique_id=283325377]
 
 [node name="esrb" type="Sprite2D" parent="sub_logo" unique_id=243742427]
-position = Vector2(916.4601, 556.46)
-scale = Vector2(0.15, 0.15)
+modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
+position = Vector2(227.47185, 914.49585)
+scale = Vector2(0.27577478, 0.27577478)
 texture = ExtResource("3_h5bog")
 
 [node name="Label" type="Label" parent="sub_logo" unique_id=829372673]
-offset_left = 189.0
-offset_top = 529.0
-offset_right = 784.0
-offset_bottom = 578.0
+visible = false
+offset_left = 427.0
+offset_top = 211.0
+offset_right = 1022.0
+offset_bottom = 260.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.67058825)
 theme_override_font_sizes/font_size = 28
 text = "sdfsadfsd"
 autowrap_mode = 2
 
-[node name="launch" type="Sprite2D" parent="sub_logo" unique_id=1889643163]
-position = Vector2(270, 703.99994)
-scale = Vector2(0.12578616, 0.12578614)
-texture = ExtResource("3_dmyt8")
-
 [node name="platform" type="Sprite2D" parent="sub_logo" unique_id=78532063]
 modulate = Color(1, 1, 1, 0.5176471)
-position = Vector2(844.46, 556.46)
-scale = Vector2(0.06, 0.06)
+position = Vector2(339.97186, 912.5759)
+scale = Vector2(0.0996777, 0.0996777)
 texture = ExtResource("4_a4yh5")
 
 [node name="Line2D" type="Line2D" parent="sub_logo" unique_id=745787589]
@@ -288,7 +299,7 @@ points = PackedVector2Array(0, 0, 900, 0)
 width = 3.0
 
 [node name="logo" type="Sprite2D" parent="." unique_id=1439290206]
-position = Vector2(527.74994, 528)
+position = Vector2(530, 528)
 
 [node name="splash" type="ColorRect" parent="." unique_id=2132087368]
 visible = false
