@@ -249,7 +249,7 @@ offset_left = -114.0
 offset_top = -122.0
 offset_right = 2055.0
 offset_bottom = 1367.0
-color = Color(0, 0, 0, 0.49803922)
+color = Color(0, 0, 0, 0.70980394)
 
 [node name="Sidefade" type="Sprite2D" parent="." unique_id=303424790]
 position = Vector2(937, 877.7795)
@@ -263,24 +263,23 @@ position = Vector2(400, 540)
 texture = SubResource("CompressedTexture2D_u0efc")
 
 [node name="launch" type="Sprite2D" parent="." unique_id=1889643163]
-position = Vector2(1548, 902.6663)
-scale = Vector2(0.16657107, 0.166571)
+position = Vector2(1582.342, 922.6666)
+scale = Vector2(0.18029666, 0.18601102)
 texture = ExtResource("3_dmyt8")
 
 [node name="sub_logo" type="Node2D" parent="." unique_id=283325377]
 
 [node name="esrb" type="Sprite2D" parent="sub_logo" unique_id=243742427]
 modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
-position = Vector2(227.47185, 914.49585)
+position = Vector2(223.47185, 877.82947)
 scale = Vector2(0.27577478, 0.27577478)
 texture = ExtResource("3_h5bog")
 
 [node name="Label" type="Label" parent="sub_logo" unique_id=829372673]
-visible = false
-offset_left = 427.0
-offset_top = 211.0
-offset_right = 1022.0
-offset_bottom = 260.0
+offset_left = 186.0
+offset_top = 957.0
+offset_right = 781.0
+offset_bottom = 1006.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.67058825)
 theme_override_font_sizes/font_size = 28
 text = "sdfsadfsd"
@@ -288,7 +287,7 @@ autowrap_mode = 2
 
 [node name="platform" type="Sprite2D" parent="sub_logo" unique_id=78532063]
 modulate = Color(1, 1, 1, 0.5176471)
-position = Vector2(339.97186, 912.5759)
+position = Vector2(335.97186, 875.90955)
 scale = Vector2(0.0996777, 0.0996777)
 texture = ExtResource("4_a4yh5")
 
