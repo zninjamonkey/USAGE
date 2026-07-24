@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://im4kcojk4ydw" path="res://launch_screen.gd" id="1_r8bky"]
 [ext_resource type="Texture2D" uid="uid://bukrpbpbuyfi4" path="res://launch 7.svg" id="3_dmyt8"]
-[ext_resource type="Texture2D" uid="uid://3o6tvfdikfcn" path="res://esrb_images/250px-ESRB_Everyone.svg.png" id="3_h5bog"]
 [ext_resource type="Texture2D" uid="uid://brhnm2055syrn" path="res://platform_logos/pc.svg" id="4_a4yh5"]
 [ext_resource type="Texture2D" uid="uid://0suv0hgjxm5u" path="res://sidefade.png" id="4_hukj0"]
 [ext_resource type="Texture2D" uid="uid://b6wug4t5go2yk" path="res://cage_animation/d59fc2f0-66a5-4c9f-af2a-7e5c088ddcfc-0.png" id="5_a4yh5"]
@@ -271,9 +270,8 @@ texture = ExtResource("3_dmyt8")
 
 [node name="esrb" type="Sprite2D" parent="sub_logo" unique_id=243742427]
 modulate = Color(0.78352344, 0.78352344, 0.78352326, 1)
-position = Vector2(223.47185, 877.82947)
-scale = Vector2(0.27577478, 0.27577478)
-texture = ExtResource("3_h5bog")
+position = Vector2(223.472, 877)
+scale = Vector2(0.29, 0.29)
 
 [node name="Label" type="Label" parent="sub_logo" unique_id=829372673]
 offset_left = 186.0
@@ -282,6 +280,17 @@ offset_right = 781.0
 offset_bottom = 1006.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.67058825)
 theme_override_font_sizes/font_size = 28
+text = "sdfsadfsd"
+autowrap_mode = 2
+
+[node name="year" type="Label" parent="sub_logo" unique_id=1116170052]
+visible = false
+offset_left = 421.0
+offset_top = 836.0
+offset_right = 1016.0
+offset_bottom = 913.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.67058825)
+theme_override_font_sizes/font_size = 56
 text = "sdfsadfsd"
 autowrap_mode = 2
 

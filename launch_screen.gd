@@ -6,6 +6,12 @@ var epic = preload("res://platform_logos/epic.svg")
 var gc = preload("res://platform_logos/gc.svg")
 var wii = preload("res://platform_logos/wii.svg")
 
+var e_texture = preload("res://esrb_images/250px-ESRB_Everyone.svg.png")
+var e10_texture = preload("res://esrb_images/250px-ESRB_Everyone_10+.svg.png")
+var t_texture = preload("res://esrb_images/250px-ESRB_Teen.svg.png")
+var m_texture = preload("res://esrb_images/250px-ESRB_Mature_17+.svg.png")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#$fader.visible = true
@@ -13,7 +19,13 @@ func _ready() -> void:
 	#$fader/AnimationPlayer.play("fade_in")
 	$logo.texture = Global.active_game.logo
 	$logo/shadow.texture = Global.active_game.logo
-	$sub_logo/Label.text = Global.active_game.description
+	$sub_logo/Label.text = str(Global.active_game.year) + " | " + Global.active_game.description
+	$sub_logo/year.text = str(Global.active_game.year)
+	match Global.active_game.esrb:
+		Global.esrb.E : $sub_logo/esrb.texture = e_texture
+		Global.esrb.E10 : $sub_logo/esrb.texture = e10_texture
+		Global.esrb.T : $sub_logo/esrb.texture = t_texture
+		Global.esrb.M : $sub_logo/esrb.texture = m_texture
 
 	if Global.active_game.platform == Global.platform.PC:
 		$sub_logo/platform.texture = pc

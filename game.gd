@@ -10,12 +10,16 @@ var logo : Texture2D
 var launch_path : String
 var description : String
 var platform : Global.platform
+var esrb : Global.esrb
+var year : int
 
-func _init(name : String, image_file_name : String, categories : Array, launch_path : String = "", description : String = "", platform : Global.platform = Global.platform.PC) -> void:
+func _init(name : String, image_file_name : String, categories : Array, launch_path : String, description : String, platform : Global.platform, esrb : Global.esrb, year : int) -> void:
 	self.name = name
 	self.image_file_name = image_file_name
 	self.categories = categories
 	self.launch_path = launch_path
+	self.esrb = esrb
+	self.year = year
 	
 	#self.image = load("res://title_images/" + image_file_name)
 	var image_path = Global.executable_dir + "/resources/title_images/" + image_file_name

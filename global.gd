@@ -4,6 +4,7 @@ var active_game : game_title
 var fader_animation : AnimationPlayer
 
 enum platform {STEAM, EGS, PC, WII, WIIU, GC, SNES, NES}
+enum esrb {E, E10, T, M}
 
 var executable_dir : String = OS.get_executable_path().get_base_dir()
 var config

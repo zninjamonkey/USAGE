@@ -16,11 +16,11 @@ var launch_screen : Node2D
 
 
 #enum games {MINECRAFT, BOPL, HOGWARTS, PORTAL, WII_SPORTS}
-var minecraft = game_title.new("Minecraft", "minecraft.png", [0], "", "Classic 3D Sandbox Block Game", Global.platform.PC)
-var bopl = game_title.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe", "Chaotic Party Battle Game", Global.platform.STEAM)
-var hogwarts = game_title.new("Hogwarts Legacy", "hogwarts.png", [0], "", "Stunning Open-World RPG In The Wizarding World Of Harry Potter", Global.platform.EGS)
-var portal = game_title.new("Portal", "portal.png", [0], "D:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2.exe", "Portal Game", Global.platform.STEAM)
-var sports = game_title.new("Wii Sports", "wiisports.png", [0], "", "Legendary Sports Game With Motion Controls", Global.platform.WII)
+#var minecraft = game_title.new("Minecraft", "minecraft.png", [0], "", "Classic 3D Sandbox Block Game", Global.platform.PC)
+#var bopl = game_title.new("Bopl Battle", "bopl.png", [0], "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Bopl Battle\\BoplBattle.exe", "Chaotic Party Battle Game", Global.platform.STEAM)
+#var hogwarts = game_title.new("Hogwarts Legacy", "hogwarts.png", [0], "", "Stunning Open-World RPG In The Wizarding World Of Harry Potter", Global.platform.EGS)
+#var portal = game_title.new("Portal", "portal.png", [0], "D:\\SteamLibrary\\steamapps\\common\\Portal 2\\portal2.exe", "Portal Game", Global.platform.STEAM)
+#var sports = game_title.new("Wii Sports", "wiisports.png", [0], "", "Legendary Sports Game With Motion Controls", Global.platform.WII)
 	
 #var title_reel : Array[game_tile] = [minecraft, bopl, portal, sports, hogwarts]
 var title_reel : Array[game_title]
@@ -37,6 +37,8 @@ func _load_config():
 		var categories = game_config.categories
 		var launch_path = game_config.launch_path
 		var description = game_config.description
+		var year : int = game_config.year
+		
 		var platform
 		match game_config.platform:
 			"PC": platform = Global.platform.PC
@@ -44,7 +46,13 @@ func _load_config():
 			"STEAM": platform = Global.platform.STEAM
 			"WII": platform = Global.platform.WII
 			"GC": platform = Global.platform.GC
-		var game = game_title.new(name, file_name, categories, launch_path, description, platform)
+		var esrb
+		match game_config.esrb:
+			"E" : esrb = Global.esrb.E
+			"E10" : esrb = Global.esrb.E10
+			"T" : esrb = Global.esrb.T
+			"M" : esrb = Global.esrb.M
+		var game = game_title.new(name, file_name, categories, launch_path, description, platform, esrb, year)
 		title_reel.append(game)
 		print(game_config)
 	
