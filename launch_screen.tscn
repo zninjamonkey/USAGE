@@ -300,6 +300,11 @@ width = 3.0
 [node name="logo" type="Sprite2D" parent="." unique_id=1439290206]
 position = Vector2(530, 528)
 
+[node name="shadow" type="Sprite2D" parent="logo" unique_id=595098354]
+self_modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+position = Vector2(0, 15)
+
 [node name="splash" type="ColorRect" parent="." unique_id=2132087368]
 visible = false
 offset_right = 1920.0

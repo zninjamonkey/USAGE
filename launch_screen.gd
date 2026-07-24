@@ -12,6 +12,7 @@ func _ready() -> void:
 	$bg.texture = Global.active_game.hero
 	#$fader/AnimationPlayer.play("fade_in")
 	$logo.texture = Global.active_game.logo
+	$logo/shadow.texture = Global.active_game.logo
 	$sub_logo/Label.text = Global.active_game.description
 
 	if Global.active_game.platform == Global.platform.PC:
