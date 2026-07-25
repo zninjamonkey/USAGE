@@ -99,6 +99,7 @@ func _process(delta: float) -> void:
 			far_left_animation_player.play("move_left")
 		
 		if Input.is_action_just_pressed("forward") and active:
+			active = false
 			Global.active_game = title_reel[0]
 			$fader/AnimationPlayer.play("fade_out")
 			await $fader/AnimationPlayer.animation_finished
@@ -107,15 +108,18 @@ func _process(delta: float) -> void:
 			add_child(launch_screen)
 			$fader/AnimationPlayer.play("fade_in")
 			active_layer = layer.LAUNCH
+			active = true
 	
 	if Input.is_action_just_pressed("back"):
 		if launch_screen != null:
+			active = false
 			$fader/AnimationPlayer.play("fade_out")
 			await $fader/AnimationPlayer.animation_finished
 			launch_screen.queue_free()
 			launch_screen = null
 			active_layer = layer.BASE
 			$fader/AnimationPlayer.play("fade_in")
+			active = true
 
 
 func _update_textures() -> void:

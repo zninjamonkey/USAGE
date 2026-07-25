@@ -745,4 +745,10 @@ text = "Favorites"
 visible = false
 z_index = 100
 
+[node name="Window" type="Window" parent="." unique_id=1806111447]
+oversampling_override = 1.0
+title = "test thingy"
+initial_position = 2
+force_native = true
+
 [connection signal="animation_finished" from="base_layer/center tile/AnimationPlayer" to="." method="_on_center_animation_finished"]
