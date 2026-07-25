@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://yeeosihb1i1e"]
+
+[node name="game_menu" type="Node2D" unique_id=1317164182]
+
+[node name="Label" type="Label" parent="." unique_id=1891988683]
+offset_left = 730.0
+offset_top = 536.0
+offset_right = 1203.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 40
+text = "Placeholder Game Menu"

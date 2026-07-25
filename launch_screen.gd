@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 		#get_tree().change_scene_to_file("res://main.tscn")
 	if Input.is_action_just_pressed("forward"):
 		print("launching...")
-		OS.create_process(Global.active_game.launch_path, [])
+		Global.active_game_pid = OS.create_process(Global.active_game.launch_path, [])
 		#$fader/AnimationPlayer.play("fade_out")
 		Global.fader_animation.play("fade_out")
 		await Global.fader_animation.animation_finished

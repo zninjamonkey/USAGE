@@ -1,7 +1,9 @@
 extends Node
 
+var main_scene : Node2D
 var active_game : game_title
 var fader_animation : AnimationPlayer
+var active_game_pid : int
 
 enum platform {STEAM, EGS, PC, WII, WIIU, GC, SNES, NES}
 enum esrb {E, E10, T, M}
@@ -10,6 +12,7 @@ var executable_dir : String = OS.get_executable_path().get_base_dir()
 var config
 
 func _ready() -> void:
+	
 	print("Test")
 	
 	print(executable_dir)
@@ -23,3 +26,11 @@ func _ready() -> void:
 		config = json.data
 	else:
 		print("Config Parse Error: ", json.get_error_message(), " at line ", json.get_error_line())
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("home"):
+		for child in main_scene.get_children():
+			child.hide()
+		var game_menu_res = load("res://game_menu.tscn")
+		var game_menu = game_menu_res.instantiate()
+		main_scene.add_child(game_menu) 

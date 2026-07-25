@@ -59,6 +59,7 @@ func _load_config():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.main_scene = self
 	
 	_load_config()	
 	_update_textures()
@@ -77,6 +78,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+		
 	$base_layer/Time.text = Time.get_time_string_from_system()
 	#print(title_reel[0].name)
 	if active_layer == layer.BASE:
